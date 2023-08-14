@@ -21,7 +21,7 @@ const Register = () =>{
                    
                    
                    <div class="input-field">
-                        <input type="text" class="input" id="email" required="" autocomplete="off" />
+                        <input type="email" class="input" id="email" required="" autocomplete="off" />
                         <label for="email">Email</label> 
                     </div> 
                    <div class="input-field">
@@ -41,7 +41,7 @@ const Register = () =>{
                         <label for="pass">Age</label>
                     </div>
                    <div class="input-field"> 
-                        <input type="submit" class="login" value="Register" />
+                        <input type="submit" class="register" value="Register" />
                    </div> 
                 </div>  
             </div>
