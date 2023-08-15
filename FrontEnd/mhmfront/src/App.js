@@ -12,8 +12,8 @@ const App = () => {
     <>
     <Navbar></Navbar>
     {/* <Login></Login> */}
-    {/* <Register /> */}
-    <MedicalHistory />
+    <Register />
+    {/* <MedicalHistory /> */}
     </>
   );
 };

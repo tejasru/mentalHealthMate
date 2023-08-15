@@ -21,24 +21,24 @@ const Register = () =>{
                    
                    
                    <div class="input-field">
-                        <input type="email" class="input" id="email" required="" autocomplete="off" />
-                        <label for="email">Email</label> 
+                        <input type="text" class="input" id="name" required="" autocomplete="off" />
+                        <label for="name">Name</label> 
                     </div> 
                    <div class="input-field">
                         <input type="password" class="input" id="pass" required="" />
                         <label for="pass">Password</label>
                     </div> 
                     <div class="input-field">
-                        <input type="number" class="input" id="pass" required="" />
-                        <label for="pass">Number</label>
+                        <input type="number" class="input" id="num" required="" />
+                        <label for="num">Number</label>
                     </div> 
                     <div class="input-field">
-                        <input type="number" class="input" id="number" required="" />
-                        <label for="pass">Number</label>
+                        <input type="email" class="input" id="email" required="" />
+                        <label for="email">Email</label>
                     </div>
                     <div class="input-field">
                         <input type="number" class="input" id="age" required="" />
-                        <label for="pass">Age</label>
+                        <label for="age">Age</label>
                     </div>
                    <div class="input-field"> 
                         <input type="submit" class="register" value="Register" />
