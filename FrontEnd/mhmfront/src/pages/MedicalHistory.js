@@ -73,6 +73,10 @@ const MedicalHistory = ()=>{
                         <Button onClick={handler3} variant="outline-primary">+</Button>{' '}
                         </td>
                     </tr>
+                    <tr>
+                        <th><div class="input-field">Diagnosis</div></th>
+                        <th><div class="input-field">Medications</div></th>
+                    </tr>
  
                              {getDiagnosis()}
                             {/* {getMedication()}  */}
