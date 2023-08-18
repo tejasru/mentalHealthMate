@@ -14,11 +14,18 @@ const App = () => {
     <>
     <Navbar></Navbar>
     {/* <Register /> */}
+<<<<<<< HEAD
    <Login></Login> 
     {/* <Choice /> */}
     {/*<MedicalHistory />*/}
 
     {/* <Home /> */}
+=======
+    {/* <Login></Login> */}
+    <Choice />
+    {/* <Home /> */}
+    {/* <MedicalHistory /> */}
+>>>>>>> 56a77d2 (Entities uploaded)
     </>
   );
 };
