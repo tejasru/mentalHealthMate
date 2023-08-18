@@ -7,17 +7,17 @@ import {AiOutlineUser} from 'react-icons/ai';
 
 
 
-const MedicalHistory = ()=>{    
+const MedicalHistory = ()=>{
     let new_diagnosis="";
-    let new_medication=""; 
+    let new_medication="";
 
     let [medicalHistory, setMedicalHistory] = useState({
         medication : [],
         diagnosis : []
     });
-    
+
     function handler(e){
-    
+
        new_diagnosis = e.target.value;
        console.log(new_diagnosis);
        console.log(medicalHistory.medication);
@@ -38,12 +38,14 @@ const MedicalHistory = ()=>{
     updated_medication.push(new_medication);
     setMedicalHistory({diagnosis:updated_diagnosis,medication:updated_medication});
     console.log(medicalHistory)
+
+    //make a JSON object.. {diagnosis: array_of_medication}
   }
 
     function getDiagnosis(){
         return medicalHistory.diagnosis.map((diag,index)=>{return <tr><div class="input-field"><td>{diag}</td></div><td>{medicalHistory.medication[index]}</td></tr>});
     }
-   
+
 
     return (
         <>
@@ -51,23 +53,23 @@ const MedicalHistory = ()=>{
     <div class="container main">
         <div class="row">
             <div class="col right">
-                
+
                 <div class="input-box">
-                   
+
                    <header><h2>Medical History form <AiOutlineUser /></h2></header>
                    <table>
                     <tr>
                         <td>
                         <div class="input-field">
                         <input type="text" class="input" onBlur={handler} id="diagnoses" required="" autocomplete="off" />
-                        <label for="diagnoses">Dignoses</label> 
+                        <label for="diagnoses">Dignoses</label>
                     </div>
                         </td>
                         <td>
                         <div class="input-field">
                         <input type="text" onBlur={handler2} class="input" id="meds" required="" />
                         <label for="meds">Medication</label>
-                    </div> 
+                    </div>
                         </td>
                         <td>
                         <Button onClick={handler3} variant="outline-primary">+</Button>{' '}
@@ -77,15 +79,15 @@ const MedicalHistory = ()=>{
                         <th><div class="input-field">Diagnosis</div></th>
                         <th><div class="input-field">Medications</div></th>
                     </tr>
- 
+
                              {getDiagnosis()}
                             {/* {getMedication()}  */}
-                   </table> 
+                   </table>
                    <div class="input-field">
-                        
+
                         <input type="submit" class="medical" value="Submit Medical History" />
-                   </div> 
-                </div>  
+                   </div>
+                </div>
             </div>
         </div>
     </div>
