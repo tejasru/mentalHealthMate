@@ -1,31 +1,33 @@
 package com.demo.SpringBootRESTWebService.model;
 
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 @Entity(name="User_Table")
 public class Users {
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 private int id;
 private String username;
 private String name;
 private String email;
 private int age;
 private String phoneno;
-@OneToOne
+@OneToOne(mappedBy="user4",cascade=CascadeType.ALL)
 private Address address;
 private String gender;
 private String password;
-@OneToMany(mappedBy="user")
+@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
 private List<Appointment> appointment;
-@OneToMany(mappedBy="user1")
-private List<FeedBack> feedback;
-@OneToOne(mappedBy="user2")
+@OneToOne(mappedBy="user2",cascade=CascadeType.ALL)
 private MedicalHistory diagnosis;
-@OneToMany(mappedBy="user3")
+@OneToMany(mappedBy="user3",cascade=CascadeType.ALL)
 private List<SiteGeneratedReport> sReport;
 public int getId() {
 	return id;
@@ -87,27 +89,21 @@ public List<Appointment> getAppointment() {
 public void setAppointment(List<Appointment> appointment) {
 	this.appointment = appointment;
 }
-public List<FeedBack> getFeedback() {
-	return feedback;
-}
-public void setFeedback(List<FeedBack> feedback) {
-	this.feedback = feedback;
-}
 public MedicalHistory getDiagnosis() {
 	return diagnosis;
 }
 public void setDiagnosis(MedicalHistory diagnosis) {
 	this.diagnosis = diagnosis;
 }
-public SiteGeneratedReport getsReport() {
-	return (SiteGeneratedReport) sReport;
+public List<SiteGeneratedReport> getsReport() {
+	return sReport;
 }
-public void setsReport(SiteGeneratedReport sReport) {
-	this.sReport = (List<SiteGeneratedReport>) sReport;
+public void setsReport(List<SiteGeneratedReport> sReport) {
+	this.sReport = sReport;
 }
 public Users(int id, String username, String name, String email, int age, String phoneno, Address address,
-		String gender, String password, List<Appointment> appointment, List<FeedBack> feedback,
-		MedicalHistory diagnosis, SiteGeneratedReport sReport) {
+		String gender, String password, List<Appointment> appointment, MedicalHistory diagnosis,
+		List<SiteGeneratedReport> sReport) {
 	super();
 	this.id = id;
 	this.username = username;
@@ -119,9 +115,8 @@ public Users(int id, String username, String name, String email, int age, String
 	this.gender = gender;
 	this.password = password;
 	this.appointment = appointment;
-	this.feedback = feedback;
 	this.diagnosis = diagnosis;
-	this.sReport = (List<SiteGeneratedReport>) sReport;
+	this.sReport = sReport;
 }
 public Users() {
 	super();
@@ -130,9 +125,10 @@ public Users() {
 public String toString() {
 	return "Users [id=" + id + ", username=" + username + ", name=" + name + ", email=" + email + ", age=" + age
 			+ ", phoneno=" + phoneno + ", address=" + address + ", gender=" + gender + ", password=" + password
-			+ ", appointment=" + appointment + ", feedback=" + feedback + ", diagnosis=" + diagnosis + ", sReport="
-			+ sReport + "]";
+			+ ", appointment=" + appointment + ", diagnosis=" + diagnosis + ", sReport=" + sReport + "]";
 }
+
+
 
 
 }

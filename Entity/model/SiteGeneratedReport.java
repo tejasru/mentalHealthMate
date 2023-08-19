@@ -1,14 +1,17 @@
 package com.demo.SpringBootRESTWebService.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="site_generated_report")
+@Table(name="site_generated_table")
 public class SiteGeneratedReport {
 @Id
+@GeneratedValue(strategy=GenerationType.IDENTITY)
 private int siteGenRepId;
 private String anxity;
 private String hyperActivity;

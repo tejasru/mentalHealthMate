@@ -3,7 +3,10 @@ package com.demo.SpringBootRESTWebService.model;
 import java.util.Date;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -12,10 +15,11 @@ import javax.persistence.Table;
 @Table(name="diagnosis_table")
 public class Diagnosis {
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 private int diagnosis_id;
 private String diagnosis_name;
 private Date date;
-@OneToMany(mappedBy="diagnosis")
+@OneToMany(mappedBy="diagnosis",cascade=CascadeType.REMOVE)
 private Set<Medications> medication;
 @ManyToOne
 private MedicalHistory medicalHistory;

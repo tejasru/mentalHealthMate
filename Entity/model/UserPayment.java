@@ -1,12 +1,14 @@
 package com.demo.SpringBootRESTWebService.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity(name="User_payment")
 public class UserPayment {
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 private int upaymentId;
 private String cType;
 private String bankName;
