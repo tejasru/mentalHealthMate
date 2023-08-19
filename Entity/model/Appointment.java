@@ -21,7 +21,7 @@ private String dName;
 private String dphoneno;
 private Date time;
 private String status;
-@OneToOne(cascade=CascadeType.ALL)
+@OneToOne(cascade=CascadeType.REMOVE)
 private UserPayment payment;
 @ManyToOne
 private Users user;
