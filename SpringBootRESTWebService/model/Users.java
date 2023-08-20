@@ -19,15 +19,15 @@ private String name;
 private String email;
 private int age;
 private String phoneno;
-@OneToOne(mappedBy="user4",cascade=CascadeType.ALL)
+@OneToOne(mappedBy="user4",cascade=CascadeType.REMOVE)
 private Address address;
 private String gender;
 private String password;
-@OneToMany(mappedBy="user",cascade=CascadeType.ALL)
+@OneToMany(mappedBy="user",cascade=CascadeType.REMOVE)
 private List<Appointment> appointment;
-@OneToOne(mappedBy="user2",cascade=CascadeType.ALL)
+@OneToOne(mappedBy="user2",cascade=CascadeType.REMOVE)
 private MedicalHistory diagnosis;
-@OneToMany(mappedBy="user3",cascade=CascadeType.ALL)
+@OneToMany(mappedBy="user3",cascade=CascadeType.REMOVE)
 private List<SiteGeneratedReport> sReport;
 public int getId() {
 	return id;

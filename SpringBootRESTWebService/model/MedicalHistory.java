@@ -21,7 +21,7 @@ public class MedicalHistory {
 private int Medical_id;
 private String familyHistory;
 private String Allergies;
-@OneToMany(mappedBy="medicalHistory",cascade=CascadeType.ALL)
+@OneToMany(mappedBy="medicalHistory",cascade=CascadeType.REMOVE)
 private Set<Diagnosis> diagnosis;
 @OneToOne
 private Users user2;
