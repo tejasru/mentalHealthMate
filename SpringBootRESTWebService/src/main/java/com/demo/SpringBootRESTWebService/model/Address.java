@@ -1,8 +1,14 @@
 package com.demo.SpringBootRESTWebService.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Address {
+	
 private String city;
 private String street;
+@Id
 private int pinCode;
 public String getCity() {
 	return city;
