@@ -1,7 +1,5 @@
 package com.demo.SpringBootRESTWebService.controller;
 
-public class AppointmentController {
-	
-	
+public class Doctor_FreeslotController {
 
 }

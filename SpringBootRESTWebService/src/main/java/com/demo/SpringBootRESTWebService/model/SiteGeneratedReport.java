@@ -13,14 +13,14 @@ public class SiteGeneratedReport {
 @GeneratedValue(strategy = GenerationType.AUTO)
 private int id;
 private String anxity;
-private String hyperActivity;
+private String hyperActivity; 
 private String schizophrenia;
 private String ocd;
 private String autism;
 private String stress;
 private String ptsd;
 private String parenoia;
-public String getAnxity() {
+public String  getAnxity() {
 	return anxity;
 }
 public void setAnxity(String anxity) {
