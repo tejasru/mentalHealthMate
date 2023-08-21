@@ -28,6 +28,7 @@ public class SpringBootRestWebServiceApplication {
 	ApplicationContext context=	SpringApplication.run(SpringBootRestWebServiceApplication.class, args);
 	UserDao ud=context.getBean(UserDao.class);
 	SiteGeneratedReportRepo sgr1=context.getBean(SiteGeneratedReportRepo.class);
+	
 	DoctorDao dd=context.getBean(DoctorDao.class);
 	MedicalHistory mh=new MedicalHistory(1,"normal","egg",null,null);
 	Diagnosis d=new Diagnosis(1,"xyz",null,null,null);
@@ -36,15 +37,15 @@ public class SpringBootRestWebServiceApplication {
 SiteGeneratedReport sr=new SiteGeneratedReport(1,1,2,3,4,5,6,7,8,null,null);
 List<SiteGeneratedReport> list=new ArrayList<SiteGeneratedReport>();
 	user.setDiagnosis(mh);
-	mh.setUser2(user);
+	//mh.setUser2(user);
 	address.setUser4(user);
 	user.setAddress(address);
-	d.setMedicalHistory(mh);
+	//d.setMedicalHistory(mh);
 	d.setMedication(null);
 	user.setsReport(list);
-	sr.setUser3(user);
+	//sr.setUser3(user);
 	Users user1=ud.save(user);
-	
+	//mh.save()
 	sgr1.save(sr);
 	
 	
