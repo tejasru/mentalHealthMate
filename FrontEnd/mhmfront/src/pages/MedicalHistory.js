@@ -40,7 +40,17 @@ const MedicalHistory = ()=>{
     console.log(medicalHistory)
 
     //make a JSON object.. {diagnosis: array_of_medication}
-  }
+    }
+
+    function handler4(){
+        let updated_diagnosis = [...medicalHistory.diagnosis];
+        console.log(updated_diagnosis);
+        let updated_medication = [...medicalHistory.medication];
+        updated_diagnosis.pop();
+        updated_medication.pop();
+        setMedicalHistory({diagnosis:updated_diagnosis,medication:updated_medication});
+        console.log(medicalHistory)
+          }
 
     function getDiagnosis(){
         return medicalHistory.diagnosis.map((diag,index)=>{return <tr><div class="input-field"><td>{diag}</td></div><td>{medicalHistory.medication[index]}</td></tr>});
@@ -58,6 +68,26 @@ const MedicalHistory = ()=>{
 
                    <header><h2>Medical History form <AiOutlineUser /></h2></header>
                    <table>
+                   <tr>
+                        <td>
+                        <div class="input-field">
+                        <input type="text" class="input" onBlur={handler} id="allergies" required="" autocomplete="off" />
+                        <label for="allergies">Allergies</label>
+                        </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                        <div class="input-field">
+                        <input type="text" class="input" onBlur={handler} id="familyHistory" required="" autocomplete="off" />
+                        <label for="familyHistory">Family-History</label>
+                        </div>
+                        </td>
+
+                    </tr>
+                   </table>
+                   <table>
                     <tr>
                         <td>
                         <div class="input-field">
@@ -72,9 +102,13 @@ const MedicalHistory = ()=>{
                     </div>
                         </td>
                         <td>
-                        <Button onClick={handler3} variant="outline-primary">+</Button>{' '}
+                            
+                        <Button onClick={handler3} variant="outline-primary ">+</Button>{' '}<Button onClick={handler4} variant="outline-primary">-</Button>{' '}   
+                        
                         </td>
                     </tr>
+                    <br></br>
+                    <br></br>
                     <tr>
                         <th><div class="input-field">Diagnosis</div></th>
                         <th><div class="input-field">Medications</div></th>
@@ -83,15 +117,22 @@ const MedicalHistory = ()=>{
                              {getDiagnosis()}
                             {/* {getMedication()}  */}
                    </table>
+
+                   
+                   
                    <div class="input-field">
 
                         <input type="submit" class="medical" value="Submit Medical History" />
+
+                         <br></br>
+
+
+                       </div>
                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
         </>
     )
 }
