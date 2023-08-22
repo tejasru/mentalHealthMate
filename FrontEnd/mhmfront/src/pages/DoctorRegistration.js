@@ -3,8 +3,10 @@ import React from 'react';
 import './styles/DoctorRegisteration.css';
 import {AiOutlineUsergroupAdd} from 'react-icons/ai';
 import axios from 'axios';
+import {URL} from '../config'
 
 const DoctorRegister = () =>{
+    
     var doctor_id;
     var duserName="";
     var doctor_name="";
@@ -36,15 +38,16 @@ const DoctorRegister = () =>{
     }
     
     function register(){
-        const body=[
-            doctor_id,
-            duserName,
-            doctor_name,
-            qualification,
-            email,
-            phone_no,
-            password
-        ]
+        const body={
+            "doctor_id":doctor_id,
+            "duserName":duserName,
+            "doctor_name":doctor_name,
+            "qualification":qualification,
+            "email":email,
+            "phone_no":phone_no,
+            "password":password
+        }
+        console.log(body);
         axios.post(`${URL}/doctor/register`,body).then((response)=>{
             console.log("data inserted");
         }).catch((error)=>{

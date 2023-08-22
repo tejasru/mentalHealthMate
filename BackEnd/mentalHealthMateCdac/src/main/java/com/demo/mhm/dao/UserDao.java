@@ -15,8 +15,6 @@ public interface UserDao extends JpaRepository<Users, Integer> {
 	
 	//@Query(value="select * from product  where price between :lpr and :hpr",nativeQuery = true)
 	//@Query(select user from Users user where user.username)
-	@Query( "select user from Users user where user.username=?uname")
+	@Query(value="select * from user_table where username=:uname",nativeQuery=true)
 	Users FindByUsername(String uname);
-
-	
 }

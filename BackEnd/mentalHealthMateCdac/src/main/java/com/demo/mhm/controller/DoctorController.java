@@ -23,7 +23,7 @@ import com.demo.mhm.service.DoctorServiceI;
 
 @RestController
 @RequestMapping("/doctor")
-@CrossOrigin(origins="http://localhost:3001")
+@CrossOrigin(origins="*")
 public class DoctorController {
 	
 	@Autowired

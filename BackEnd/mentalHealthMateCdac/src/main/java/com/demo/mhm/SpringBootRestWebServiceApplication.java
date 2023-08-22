@@ -1,4 +1,4 @@
-package com.demo.mhm.Project;
+package com.demo.mhm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,5 +15,7 @@ public class SpringBootRestWebServiceApplication {
 			SpringApplication.run(SpringBootRestWebServiceApplication.class, args);	
 			System.out.println("------------------");
 	}
+	//@Bean
+	//public Web
 
 }
