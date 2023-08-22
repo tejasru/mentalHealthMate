@@ -1,0 +1,64 @@
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.wrapper{
+    background: #ececec;
+    padding: 0 20px 0 20px;
+}
+.main1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-right: 0%;
+}
+.images{
+    background-image: url("../../images/doctor.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+    position: relative;
+}
+.row1{
+  width:  18rem;
+  height:250px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+}
+.text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-title a{
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    transition: .5s;
+}
+
+
+@media only screen and (max-width: 768px){
+    images{
+        width: 16rem;
+        position: absolute;
+        top: 20px;
+        left: 47%;
+    }
+    .text p, i{
+        font-size: 16px;
+    }
+    .row{
+        max-width:18rem;
+        width: 100%;
+    }
+}
