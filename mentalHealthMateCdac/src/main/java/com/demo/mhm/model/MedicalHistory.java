@@ -1,5 +1,6 @@
 package com.demo.mhm.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -19,15 +20,18 @@ public class MedicalHistory {
 private int Medical_id;
 private String familyHistory;
 private String Allergies;
+private Date date;
 @OneToOne
 private Users user3;
 @OneToMany(cascade=CascadeType.REMOVE)
 private List<Diagnosis> diagnosis;
-public MedicalHistory(int medical_id, String familyHistory, String allergies, Users user3, List<Diagnosis> diagnosis) {
+public MedicalHistory(int medical_id, String familyHistory, String allergies, Date date, Users user3,
+		List<Diagnosis> diagnosis) {
 	super();
 	Medical_id = medical_id;
 	this.familyHistory = familyHistory;
 	Allergies = allergies;
+	this.date = date;
 	this.user3 = user3;
 	this.diagnosis = diagnosis;
 }
@@ -52,6 +56,12 @@ public String getAllergies() {
 public void setAllergies(String allergies) {
 	Allergies = allergies;
 }
+public Date getDate() {
+	return date;
+}
+public void setDate(Date date) {
+	this.date = date;
+}
 public Users getUser3() {
 	return user3;
 }
@@ -67,8 +77,6 @@ public void setDiagnosis(List<Diagnosis> diagnosis) {
 @Override
 public String toString() {
 	return "MedicalHistory [Medical_id=" + Medical_id + ", familyHistory=" + familyHistory + ", Allergies=" + Allergies
-			+ ", user3=" + user3 + ", diagnosis=" + diagnosis + "]";
+			+ ", date=" + date + ", user3=" + user3 + ", diagnosis=" + diagnosis + "]";
 }
-
-
 }

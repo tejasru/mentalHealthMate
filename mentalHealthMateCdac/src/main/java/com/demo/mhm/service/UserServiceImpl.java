@@ -2,6 +2,7 @@ package com.demo.mhm.service;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +32,7 @@ public class UserServiceImpl implements UserServiceI{
 		// TODO Auto-generated method stub
 		Users d=ur.FindByUsername(uc.getUname());
 		String rawPassword = uc.getPassword();
+		System.out.println(d);
 		if(d != null &&( (rawPassword.equals(d.getPassword()))&&(uc.getUname().equals(d.getName())))){
 			
 			return d;

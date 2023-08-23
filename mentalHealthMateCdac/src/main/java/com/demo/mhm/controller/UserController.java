@@ -9,11 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.mhm.dto.DoctorCredentialDTO;
 import com.demo.mhm.dto.UserCredentialDTO;
-import com.demo.mhm.model.Doctor;
 import com.demo.mhm.model.Users;
-import com.demo.mhm.service.DoctorServiceI;
 import com.demo.mhm.service.UserServiceI;
 
 @RequestMapping("/user")

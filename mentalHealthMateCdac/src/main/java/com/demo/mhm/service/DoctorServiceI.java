@@ -1,7 +1,5 @@
 package com.demo.mhm.service;
 
-import org.springframework.http.ResponseEntity;
-
 import com.demo.mhm.dto.DoctorCredentialDTO;
 import com.demo.mhm.model.Doctor;
 

@@ -20,10 +20,10 @@ import com.demo.mhm.model.Doctor;
 import com.demo.mhm.service.DoctorServiceI;
 
 
-@RequestMapping("/doctor")
-@RestController
-@CrossOrigin("*")
 
+@RestController
+@RequestMapping("/doctor")
+@CrossOrigin(origins="http://localhost:3001")
 public class DoctorController {
 	
 	@Autowired
@@ -33,7 +33,7 @@ public class DoctorController {
 	public ResponseEntity<?> addDoctor(@RequestBody Doctor doctor)
 	{
 		 Doctor uData =serviceI.addDoctor(doctor);
-		
+		System.out.println(uData);
 		 if(uData!=null)
 		 return ResponseEntity.ok(uData);
 		 

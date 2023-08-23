@@ -5,8 +5,6 @@ import java.util.Optional;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 
@@ -23,8 +21,7 @@ public class DoctorServiceImpl implements DoctorServiceI{
 	@Autowired
 	private DoctorRepo dd;
 	
-	
-	
+
 
 	@Override
 	public Doctor addDoctor(Doctor doctor) {
@@ -53,7 +50,7 @@ public class DoctorServiceImpl implements DoctorServiceI{
 	@Override
 	public Doctor findUserByUserNameAndPassword(DoctorCredentialDTO dc) {
 
-	Doctor d=dd.FindByUsername(dc.getUsername());
+	Doctor d=dd.FindByDuserName(dc.getUsername());
 			String rawPassword = dc.getPassword();
 			if(d != null &&( (rawPassword.equals(d.getPassword()))&&(dc.getUsername().equals(d.getDuserName())))){
 				
