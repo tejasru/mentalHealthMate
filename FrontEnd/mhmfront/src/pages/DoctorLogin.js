@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
- import './styles/DoctorLogin.css';
+import {useNavigate} from 'react-router';
+import {toast} from 'react-toastify';
+import './styles/DoctorLogin.css';
 import {AiOutlineUser} from 'react-icons/ai';
 import {URL} from '../config'
 import axios from 'axios';
@@ -8,6 +10,7 @@ import axios from 'axios';
 // import loginpic from "../images/login.svg"
 
 const DoctorLogin = () =>{
+    const navigate = useNavigate;
     var username="";
     var password="";
     function handler1(e){
@@ -18,11 +21,31 @@ const DoctorLogin = () =>{
     }
     function loginFunction(){
         const body={
-           username,
-           password,
+           "username":username,
+           "password":password,
         }
         axios.post(`${URL}/doctor/login`,body).then((response)=>{
              console.log("sucessfull login");
+             const result = response.data;
+             const status = response.status;
+             if(status==200){
+                 console.log(result)
+                 toast.success(`Welcome ${result.doctor_name}`);
+                 const {id, name, username, email, pass, phoneno, qualification} = result;
+                 sessionStorage['id']=id;
+                 sessionStorage['name']=name;
+                 sessionStorage['username']=username;
+                 sessionStorage['email']=email;
+                 sessionStorage['pass']=pass;
+                 sessionStorage['phoneno']=phoneno;
+                 sessionStorage['qualification']=qualification
+                 sessionStorage['loginStatus']=1;
+                 navigate('/doctorRegister')
+             }else{
+                 toast.error("Wrong credentials");
+             }
+        }).catch((error)=>{
+            console.error(error);
         })
     }
     return (
@@ -32,7 +55,8 @@ const DoctorLogin = () =>{
         <div class="row">
             <div class="col-md-6 side-image">        
             </div>
-            <div class="col-md-6 right">
+            <div 
+            class="col-md-6 right">
                 
                 <div class="input-box">
                    
