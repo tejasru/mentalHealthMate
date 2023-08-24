@@ -1,32 +1,17 @@
 package com.demo.mhm.dto;
 
 import java.util.Arrays;
+import java.util.List;
+
+import com.demo.mhm.model.Diagnosis;
+import com.demo.mhm.model.Medications;
 
 public class MedicalHistoryDTO {
 	private int userId;
-	private String Allergies;
+	private String allergies;
 	private String familyHistory;
-	private String diagnosis[];
-	private String Medication[];
-	
-	
-	public MedicalHistoryDTO() {
-		super();
-	}
-	public MedicalHistoryDTO(int userId, String allergies, String familyHistory, String[] diagnosis,
-			String[] medication) {
-		super();
-		this.userId = userId;
-		Allergies = allergies;
-		this.familyHistory = familyHistory;
-		this.diagnosis = diagnosis;
-		Medication = medication;
-	}
-	@Override
-	public String toString() {
-		return "MedicalHistoryDTO [userId=" + userId + ", Allergies=" + Allergies + ", familyHistory=" + familyHistory
-				+ ", diagnosis=" + Arrays.toString(diagnosis) + ", Medication=" + Arrays.toString(Medication) + "]";
-	}
+	private List<DiagnosisDTO> diagnosisDTO;
+	private List<MedicationDTO> MedicationDTO;
 	public int getUserId() {
 		return userId;
 	}
@@ -34,10 +19,10 @@ public class MedicalHistoryDTO {
 		this.userId = userId;
 	}
 	public String getAllergies() {
-		return Allergies;
+		return allergies;
 	}
 	public void setAllergies(String allergies) {
-		Allergies = allergies;
+	allergies = allergies;
 	}
 	public String getFamilyHistory() {
 		return familyHistory;
@@ -45,16 +30,33 @@ public class MedicalHistoryDTO {
 	public void setFamilyHistory(String familyHistory) {
 		this.familyHistory = familyHistory;
 	}
-	public String[] getDiagnosis() {
-		return diagnosis;
+	public List<DiagnosisDTO> getDiagnosisDTO() {
+		return diagnosisDTO;
 	}
-	public void setDiagnosis(String[] diagnosis) {
-		this.diagnosis = diagnosis;
+	public void setDiagnosisDTO(List<DiagnosisDTO> diagnosisDTO) {
+		this.diagnosisDTO = diagnosisDTO;
 	}
-	public String[] getMedication() {
-		return Medication;
+	public List<MedicationDTO> getMedicationDTO() {
+		return MedicationDTO;
 	}
-	public void setMedication(String[] medication) {
-		Medication = medication;
+	public void setMedicationDTO(List<MedicationDTO> medicationDTO) {
+		MedicationDTO = medicationDTO;
 	}
-}
+	public MedicalHistoryDTO(int userId, String allergies, String familyHistory, List<DiagnosisDTO> diagnosisDTO,
+			List<MedicationDTO> medicationDTO) {
+		super();
+		this.userId = userId;
+		this.allergies = allergies;
+		this.familyHistory = familyHistory;
+		this.diagnosisDTO = diagnosisDTO;
+		MedicationDTO = medicationDTO;
+	}
+	public MedicalHistoryDTO() {
+		super();
+	}
+	@Override
+	public String toString() {
+		return "MedicalHistoryDTO [userId=" + userId + ", Allergies=" + allergies + ", familyHistory=" + familyHistory
+				+ ", diagnosisDTO=" + diagnosisDTO + ", MedicationDTO=" + MedicationDTO + "]";
+	}
+	}

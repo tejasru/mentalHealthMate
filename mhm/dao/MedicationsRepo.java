@@ -3,8 +3,9 @@ package com.demo.mhm.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.demo.mhm.model.MedicalHistory;
+import com.demo.mhm.model.*;
+
 @Repository
-public interface MedicalHistoryRepo extends JpaRepository<MedicalHistory, Integer> {
+public interface MedicationsRepo extends JpaRepository<Medications, Integer> {
 
 }
