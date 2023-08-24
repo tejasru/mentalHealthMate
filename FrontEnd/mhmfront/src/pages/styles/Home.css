@@ -6,30 +6,61 @@
 }
 .wrapper{
     background: #ececec;
-    padding: 0 20px 0 20px;
+    padding: 0 5px 0 5px;
 }
-.main{
+.maind{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-right: 0%;
+    padding: 0%;
+    flex-shrink: inherit;
 }
-.images{
-    background-image: url("../../images/doctor.jpeg");
+.homeimages{
+    align-self: center;
+    height: 50%;
+    width: 100%;
+    padding: 5px;
+    background-image: url("../../images/money.jpeg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+    color: #ececec;
+}
+.homeimagesschedule{
+    align-self: center;
+    height: 50%;
+    width: 100%;
+    padding: 5px;
+    background-image: url("../../images/schedule.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 10px 10px 10px;
     position: relative;
 }
+.homeimagespatient{
+    align-self: center;
+    height: 50%;
+    width: 100%;
+    padding: 5px;
+    background-image: url("../../images/schedule.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+}
+
 .row{
   width:  50rem;
-  height:500px;
+  height: 570px;
   border-radius: 15px;
   background: #fff;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
   box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
 }
 .text{
@@ -38,11 +69,27 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+.card-heading h5{
+    text-decoration: underline;
+    color: #313866;
+    transition: .3s;
+}
+.card-heading h5:hover{
+    text-decoration: none;
+    font-size: large;
+    color: #4477CE;
+}
 .card-title a{
     text-decoration: none;
     font-weight: 700;
-    color: #000;
+    color: #4957db;
+    transition: .5s;
+}
+.card-title a:hover{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: x-large;
+    color: #b753cd;
     transition: .5s;
 }
 .col{
@@ -51,18 +98,28 @@
 }
 
 
+
 @media only screen and (max-width: 768px){
-    images{
+    homeimages{
         width: 16rem;
         position: absolute;
         top: 20px;
         left: 47%;
     }
+    .row{
+        height:auto;
+    }
     .text p, i{
         font-size: 16px;
     }
-    .row{
-        max-width:18rem;
-        width: 100%;
+    .maind{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 0%;
+        margin: 0%;
+    }
+    .col{
+        display: block;
     }
 }

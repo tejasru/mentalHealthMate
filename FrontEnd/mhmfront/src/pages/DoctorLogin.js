@@ -2,15 +2,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import {useNavigate} from 'react-router';
 import {toast} from 'react-toastify';
-import './styles/DoctorLogin.css';
+import './styles/Login.css';
 import {AiOutlineUser} from 'react-icons/ai';
 import {URL} from '../config'
 import axios from 'axios';
+import NavBar from '../components/NavBar';
 
 // import loginpic from "../images/login.svg"
 
 const DoctorLogin = () =>{
-    const navigate = useNavigate;
+    const navigate = useNavigate();
     var username="";
     var password="";
     function handler1(e){
@@ -40,7 +41,7 @@ const DoctorLogin = () =>{
                  sessionStorage['phoneno']=phoneno;
                  sessionStorage['qualification']=qualification
                  sessionStorage['loginStatus']=1;
-                 navigate('/doctorRegister')
+                 navigate('/')
              }else{
                  toast.error("Wrong credentials");
              }
@@ -50,10 +51,11 @@ const DoctorLogin = () =>{
     }
     return (
         <>
+        <NavBar />
         <div class="wrapper">
     <div class="container main">
         <div class="row">
-            <div class="col-md-6 side-image">        
+            <div class="col-md-6 dside-image">        
             </div>
             <div 
             class="col-md-6 right">

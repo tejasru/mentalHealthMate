@@ -15,20 +15,31 @@ const AuthorizeDoctor=()=>{
   const loginStatus = sessionStorage['loginStatus'];
   return loginStatus == '1'?<DoctorRegistration />:<DoctorLogin />
 }
+const Authorize=()=>{
+  const loginStatus = sessionStorage['loginStatus'];
+  if(loginStatus=='1'){
+   return <DoctorHome />
+  }
+  else if(loginStatus=='2'){
+    // <UserHome />
+  }
+  else{
+    return <Login />
+  }
+}
 const App = () => {
  
   return (
     <>
-    <Navbar></Navbar>
     <BrowserRouter>
     <Routes>
       {/* <Route path="/" element={} /> */}
       {/* <Route path="/userRegister" element={<Register /> } /> */}
-      {/* <Route path="/userLogin" element={<Login></Login>} /> */}
-      <Route path="/doctorRegister" element={<DoctorRegistration />} />
-      <Route path="/" element={<DoctorHome />} />
-      {/* <Route path="/" element={} /> */}
-      {/* <Route path="/" element={} /> */}
+      <Route path="/userLogin" element={<Login></Login>} />
+      <Route path="/doctorRegisteration" element={<DoctorRegistration />} />
+      <Route path="/" element={<Authorize />} />
+      <Route path="/doctorLogin" element={<DoctorLogin />} />
+      <Route path="/userRegisteration" element={<Register />} />
       {/* <Route path="/" element={} /> */}
     
     {/* */}

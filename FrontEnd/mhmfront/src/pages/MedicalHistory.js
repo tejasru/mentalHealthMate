@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import React,{useState} from 'react';
 import './styles/MedicalHistory.css';
-
+import NavBar from '../components/NavBar';
 import {AiOutlineUser} from 'react-icons/ai';
 
 
@@ -59,6 +59,7 @@ const MedicalHistory = ()=>{
 
     return (
         <>
+        <NavBar />
         <div class="wrapper">
     <div class="container main">
         <div class="row">

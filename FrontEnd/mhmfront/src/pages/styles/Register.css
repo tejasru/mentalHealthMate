@@ -22,9 +22,17 @@
     border-radius: 10px 0 0 10px;
     position: relative;
 }
+.dleft{
+    background-image: url("../../images/docReg.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+    position: relative;
+}
 .row{
   width:  900px;
-  height:550px;
+  height: 100vh;
   border-radius: 10px;
   background: #fff;
   padding: 0px;
@@ -130,7 +138,10 @@ span a:hover{
 }
 
 @media only screen and (max-width: 768px){
-    .side-image{
+    .left{
+        border-radius: 10px 10px 0 0;
+    }
+    .dleft{
         border-radius: 10px 10px 0 0;
     }
     img{

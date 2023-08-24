@@ -1,10 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import './styles/Choice.css';
+import NavBar from '../components/NavBar';
 
 const Choice =()=>{
     return(
         <>
+        <NavBar />
             <div class="wrapper">
                 <div class="container main1">
                     

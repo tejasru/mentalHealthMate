@@ -2,10 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import './styles/Register.css';
 import {AiOutlineUsergroupAdd} from 'react-icons/ai';
-
+import NavBar from '../components/NavBar';
 const Register = () =>{
     return (
         <>
+        <NavBar />
         <div class="wrapper">
     <div class="container main">
         
@@ -15,11 +16,9 @@ const Register = () =>{
         <header><h2>Register <AiOutlineUsergroupAdd /></h2></header>    
             </div>
             
-            <div class="col-md-6 right">
+            <div class="col col-md-6 right">
                 
                 <div class="input-box">
-                   
-                   
                    <div class="input-field">
                         <input type="text" class="input" id="name" required="" autocomplete="off" />
                         <label for="name">Name</label> 
