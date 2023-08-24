@@ -18,13 +18,13 @@ public class DoctorPaymentController {
 	
 
 @Autowired
-private DocPaymentServiceI Doc_PayserviceImpl;
+private DocPaymentServiceI DocPayserviceImpl;
 
 
 @GetMapping("/{id}")
 public ResponseEntity<?> getTablesByWaiterId(@PathVariable("id") int paymentId)
 {
-	return ResponseEntity.ok(Doc_PayserviceImpl.findAllappointment(paymentId));
+	return ResponseEntity.ok(DocPayserviceImpl.findAllappointment(paymentId));
 }
 
 

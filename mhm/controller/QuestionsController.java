@@ -24,7 +24,6 @@ public class QuestionsController {
 	public ResponseEntity<?> getSiteGeneratedReport() {
 		
 		//return ResponseUtil.success(qsi.generateReport());
-		System.out.println(qsi.generateReport());
 		return ResponseEntity.ok(qsi.generateReport());
 	}
 	
