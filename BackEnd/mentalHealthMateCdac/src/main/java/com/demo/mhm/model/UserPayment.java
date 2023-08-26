@@ -4,37 +4,49 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity(name="User_payment")
 public class UserPayment {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-private int upaymentId;
+private int uPaymentId;
 private String cType;
 private String bankName;
 private long accountNo;
 private double amount;
 private long ifsc;
 private String email;
-public UserPayment(int upaymentId, String cType, String bankName, long accountNo, double amount, long ifsc,
-		String email) {
+@OneToOne
+private Appointment appointment;
+
+
+@Override
+public String toString() {
+	return "UserPayment [upaymentId=" + uPaymentId + ", cType=" + cType + ", bankName=" + bankName + ", accountNo="
+			+ accountNo + ", amount=" + amount + ", ifsc=" + ifsc + ", email=" + email + ", appointment=" + appointment
+			+ "]";
+}
+public UserPayment() {
 	super();
-	this.upaymentId = upaymentId;
+}
+public UserPayment(int upaymentId, String cType, String bankName, long accountNo, double amount, long ifsc,
+		String email, Appointment appointment) {
+	super();
+	this.uPaymentId = upaymentId;
 	this.cType = cType;
 	this.bankName = bankName;
 	this.accountNo = accountNo;
 	this.amount = amount;
 	this.ifsc = ifsc;
 	this.email = email;
-}
-public UserPayment() {
-	super();
+	this.appointment = appointment;
 }
 public int getUpaymentId() {
-	return upaymentId;
+	return uPaymentId;
 }
 public void setUpaymentId(int upaymentId) {
-	this.upaymentId = upaymentId;
+	this.uPaymentId = upaymentId;
 }
 public String getcType() {
 	return cType;
@@ -72,10 +84,12 @@ public String getEmail() {
 public void setEmail(String email) {
 	this.email = email;
 }
-@Override
-public String toString() {
-	return "UserPayment [upaymentId=" + upaymentId + ", cType=" + cType + ", bankName=" + bankName + ", accountNo="
-			+ accountNo + ", amount=" + amount + ", ifsc=" + ifsc + ", email=" + email + "]";
+public Appointment getAppointment() {
+	return appointment;
 }
+public void setAppointment(Appointment appointment) {
+	this.appointment = appointment;
+}
+
 
 }

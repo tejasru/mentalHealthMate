@@ -6,6 +6,6 @@ import com.demo.mhm.model.SiteGeneratedReport;
 
 public interface SiteGenReportI {
 
-	List<SiteGeneratedReport> getAllReports();
+	List<SiteGeneratedReport> getAllReports(int id);
 
 }

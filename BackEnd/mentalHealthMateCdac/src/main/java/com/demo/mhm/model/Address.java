@@ -11,8 +11,8 @@ import javax.persistence.OneToOne;
 public class Address {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
-@Column(name="add_id")
-private int Add_id;
+@Column(name="addId")
+private int addId;
 private String city;
 private String street;
 private int pinCode;
@@ -20,7 +20,7 @@ private int pinCode;
 private Users user1;
 public Address(int add_id, String city, String street, int pinCode, Users user1) {
 	super();
-	Add_id = add_id;
+	this.addId = add_id;
 	this.city = city;
 	this.street = street;
 	this.pinCode = pinCode;
@@ -30,10 +30,10 @@ public Address() {
 	super();
 }
 public int getAdd_id() {
-	return Add_id;
+	return addId;
 }
 public void setAdd_id(int add_id) {
-	Add_id = add_id;
+	this.addId = add_id;
 }
 public String getCity() {
 	return city;
@@ -61,7 +61,7 @@ public void setUser1(Users user1) {
 }
 @Override
 public String toString() {
-	return "Address [Add_id=" + Add_id + ", city=" + city + ", street=" + street + ", pinCode=" + pinCode + ", user1="
+	return "Address [Add_id=" + addId + ", city=" + city + ", street=" + street + ", pinCode=" + pinCode + ", user1="
 			+ user1 + "]";
 }
 

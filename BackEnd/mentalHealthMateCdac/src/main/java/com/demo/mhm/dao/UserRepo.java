@@ -17,6 +17,7 @@ public interface UserRepo extends JpaRepository<Users, Integer> {
 	//@Query(select user from Users user where user.username)
 	@Query( value="select * from user_table where username=:uname",nativeQuery = true)
 	Users FindByUsername(String uname);
-
+	@Query(value="select * from user_table where name=:patientName",nativeQuery=true)
+	Users getByName(String patientName);
 	
 }

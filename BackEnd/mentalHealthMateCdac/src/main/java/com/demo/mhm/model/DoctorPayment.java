@@ -9,23 +9,23 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="DocPayment_table")
-public class Doctor_payment {
+public class DoctorPayment {
 
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 private int paymentId;
 private double amount;
-private boolean pay_status;
+private boolean payStatus;
 @OneToOne
-private Doctor_Appointment dpayment;
-public Doctor_payment(int paymentId, double amount, boolean pay_status, Doctor_Appointment dpayment) {
+private DoctorAppointment dPayment;
+public DoctorPayment(int paymentId, double amount, boolean pay_status, DoctorAppointment dpayment) {
 	super();
 	this.paymentId = paymentId;
 	this.amount = amount;
-	this.pay_status = pay_status;
-	this.dpayment = dpayment;
+	this.payStatus = pay_status;
+	this.dPayment = dpayment;
 }
-public Doctor_payment() {
+public DoctorPayment() {
 	super();
 }
 public int getPaymentId() {
@@ -41,21 +41,21 @@ public void setAmount(double amount) {
 	this.amount = amount;
 }
 public boolean isPay_status() {
-	return pay_status;
+	return payStatus;
 }
 public void setPay_status(boolean pay_status) {
-	this.pay_status = pay_status;
+	this.payStatus = pay_status;
 }
-public Doctor_Appointment getDpayment() {
-	return dpayment;
+public DoctorAppointment getDpayment() {
+	return dPayment;
 }
-public void setDpayment(Doctor_Appointment dpayment) {
-	this.dpayment = dpayment;
+public void setDpayment(DoctorAppointment dpayment) {
+	this.dPayment = dpayment;
 }
 @Override
 public String toString() {
-	return "Doctor_payment [paymentId=" + paymentId + ", amount=" + amount + ", pay_status=" + pay_status
-			+ ", dpayment=" + dpayment + "]";
+	return "Doctor_payment [paymentId=" + paymentId + ", amount=" + amount + ", pay_status=" + payStatus
+			+ ", dpayment=" + dPayment + "]";
 }
 
 	

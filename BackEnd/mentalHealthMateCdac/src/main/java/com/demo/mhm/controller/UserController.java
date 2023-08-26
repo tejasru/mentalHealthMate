@@ -4,11 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.mhm.dto.MedicalHistoryDTO;
 import com.demo.mhm.dto.UserCredentialDTO;
 import com.demo.mhm.model.Users;
 import com.demo.mhm.service.UserServiceI;
@@ -27,10 +30,11 @@ public class UserController {
 	{
 		 Users uData =serviceI.addUser(user);
 		
-		 if(uData!=null)
-		 return ResponseEntity.ok(uData);
-		 
-		 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+		 if(uData!=null) {
+		 return ResponseEntity.ok(uData);}
+		 else
+		 {
+		 return ResponseEntity.status(HttpStatus.NOT_FOUND).build();}
 		
 	}
 	
@@ -47,9 +51,19 @@ public class UserController {
 			}
 		
 	}
-
 	
+	@PatchMapping("/updateAllergies/{id}/{allergy}")
+	public ResponseEntity<?> updateAllergyById(@PathVariable("id") int id,@PathVariable("allergy") String allergy,HttpStatus status){
+		if(serviceI.updateAllergy(id,allergy)) {
+			return ResponseEntity.ok(status);
+		}
+		return ResponseEntity.status(status).build();
+	}
 	
-	
+	@PostMapping("/addMedicalHistory")
+	public ResponseEntity<?> addMedicalHistory(@RequestBody MedicalHistoryDTO medicalHistoryDTO,HttpStatus status){
+		boolean out = serviceI.addMedicalHistory(medicalHistoryDTO);
+		return ResponseEntity.ok(status);
+	}
 
 }

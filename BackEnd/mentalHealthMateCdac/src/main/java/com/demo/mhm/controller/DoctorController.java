@@ -23,7 +23,7 @@ import com.demo.mhm.service.DoctorServiceI;
 
 @RestController
 @RequestMapping("/doctor")
-@CrossOrigin(origins="http://localhost:3001")
+@CrossOrigin(origins="*")
 public class DoctorController {
 	
 	@Autowired
@@ -64,18 +64,17 @@ public class DoctorController {
 
 
 @PostMapping("/login")
-public ResponseEntity<?> loginUser(@RequestBody DoctorCredentialDTO dcredential)
+public ResponseEntity<?> loginDoctor(@RequestBody DoctorCredentialDTO dcredential)
 {
-	Doctor dtoSend = serviceI.findUserByUserNameAndPassword(dcredential);
+	Doctor dtoSend = serviceI.findUserByUserNameAndPassword(dcredential); 
 	if(dtoSend!=null) {
-	
+	//System.out.println(dtoSend);
 			return ResponseEntity.ok(dtoSend);
 		}else {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
 		}
-		
-	
 }
+
 	
 }

@@ -2,10 +2,10 @@ package com.demo.mhm.service;
 
 import java.util.List;
 
-import com.demo.mhm.model.Doctor_payment;
+import com.demo.mhm.model.DoctorPayment;
 
 public interface DocPaymentServiceI {
 
-	List<Doctor_payment> findAllappointment(int paymentId);
+	List<DoctorPayment> findAllappointment(int paymentId);
 
 }

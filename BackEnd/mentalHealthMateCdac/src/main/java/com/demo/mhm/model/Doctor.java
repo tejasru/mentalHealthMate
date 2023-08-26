@@ -11,44 +11,44 @@ import javax.persistence.Table;
 public class Doctor {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-private int doctor_id;
-private String duserName;
-private String doctor_name;
+private int doctorId;
+private String dUserName;
+private String doctorName;
 private String qualification;
 private String email;
-private String phone_no;
+private String phoneNo;
 private String password;
 public Doctor(int doctor_id, String duserName, String doctor_name, String qualification, String email, String phone_no,
 		String password) {
 	super();
-	this.doctor_id = doctor_id;
-	this.duserName = duserName;
-	this.doctor_name = doctor_name;
+	this.doctorId = doctor_id;
+	this.dUserName = duserName;
+	this.doctorName = doctor_name;
 	this.qualification = qualification;
 	this.email = email;
-	this.phone_no = phone_no;
+	this.phoneNo = phone_no;
 	this.password = password;
 }
 public Doctor() {
 	super();
 }
 public int getDoctor_id() {
-	return doctor_id;
+	return doctorId;
 }
 public void setDoctor_id(int doctor_id) {
-	this.doctor_id = doctor_id;
+	this.doctorId = doctor_id;
 }
 public String getDuserName() {
-	return duserName;
+	return dUserName;
 }
 public void setDuserName(String duserName) {
-	this.duserName = duserName;
+	this.dUserName = duserName;
 }
 public String getDoctor_name() {
-	return doctor_name;
+	return doctorName;
 }
 public void setDoctor_name(String doctor_name) {
-	this.doctor_name = doctor_name;
+	this.doctorName = doctor_name;
 }
 public String getQualification() {
 	return qualification;
@@ -63,10 +63,10 @@ public void setEmail(String email) {
 	this.email = email;
 }
 public String getPhone_no() {
-	return phone_no;
+	return phoneNo;
 }
 public void setPhone_no(String phone_no) {
-	this.phone_no = phone_no;
+	this.phoneNo = phone_no;
 }
 public String getPassword() {
 	return password;
@@ -76,9 +76,10 @@ public void setPassword(String password) {
 }
 @Override
 public String toString() {
-	return "Doctor [doctor_id=" + doctor_id + ", duserName=" + duserName + ", doctor_name=" + doctor_name
-			+ ", qualification=" + qualification + ", email=" + email + ", phone_no=" + phone_no + ", password="
+	return "Doctor [doctorId=" + doctorId + ", dUserName=" + dUserName + ", doctorName=" + doctorName
+			+ ", qualification=" + qualification + ", email=" + email + ", phoneNo=" + phoneNo + ", password="
 			+ password + "]";
 }
+
 
 }

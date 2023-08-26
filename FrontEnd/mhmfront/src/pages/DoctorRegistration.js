@@ -1,9 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import './styles/DoctorRegisteration.css';
+import './styles/Register.css';
 import {AiOutlineUsergroupAdd} from 'react-icons/ai';
 import axios from 'axios';
 import {URL} from '../config'
+import NavBar from '../components/NavBar';
 
 const DoctorRegister = () =>{
     
@@ -39,12 +40,12 @@ const DoctorRegister = () =>{
     
     function register(){
         const body={
-            "doctor_id":doctor_id,
-            "duserName":duserName,
-            "doctor_name":doctor_name,
+            "doctorId":doctor_id,
+            "dUserName":duserName,
+            "doctorName":doctor_name,
             "qualification":qualification,
             "email":email,
-            "phone_no":phone_no,
+            "phoneNo":phone_no,
             "password":password
         }
         console.log(body);
@@ -59,12 +60,13 @@ const DoctorRegister = () =>{
 
     return (
         <>
+        <NavBar />
         <div class="wrapper">
     <div class="container main">
         
         <div class="row">
         
-        <div class="col-md-6 left">    
+        <div class="col-md-6 dleft">    
         <header><h2>Doctor Register <AiOutlineUsergroupAdd /></h2></header>    
             </div>
             

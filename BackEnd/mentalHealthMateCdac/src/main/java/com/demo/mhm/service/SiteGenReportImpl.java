@@ -19,7 +19,7 @@ public class SiteGenReportImpl implements SiteGenReportI {
 	SiteGeneratedRepo sgr;
 
 	@Override
-	public List<SiteGeneratedReport> getAllReports() {
+	public List<SiteGeneratedReport> getAllReports(int id) {
 		// TODO Auto-generated method stub
 		return sgr.findAll();
 	}

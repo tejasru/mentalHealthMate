@@ -2,31 +2,39 @@ package com.demo.mhm.dto;
 
 public class BookSlotDTO {
 	
-	private int doctor_id;
-	private int slotId;
-	public BookSlotDTO(int doctor_id, int slotId) {
+	private int doctorId;
+	private int slot;
+	private int userId;
+	public int getDoctorId() {
+		return doctorId;
+	}
+	public void setDoctorId(int doctorId) {
+		this.doctorId = doctorId;
+	}
+	public int getSlot() {
+		return slot;
+	}
+	public void setSlot(int slot) {
+		this.slot = slot;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public BookSlotDTO(int doctorId, int slot, int userId) {
 		super();
-		this.doctor_id = doctor_id;
-		this.slotId = slotId;
+		this.doctorId = doctorId;
+		this.slot = slot;
+		this.userId = userId;
 	}
 	public BookSlotDTO() {
 		super();
 	}
-	public int getDoctor_id() {
-		return doctor_id;
-	}
-	public void setDoctor_id(int doctor_id) {
-		this.doctor_id = doctor_id;
-	}
-	public int getSlotId() {
-		return slotId;
-	}
-	public void setSlotId(int slotId) {
-		this.slotId = slotId;
-	}
 	@Override
 	public String toString() {
-		return "BookSlotDTO [doctor_id=" + doctor_id + ", slotId=" + slotId + "]";
+		return "BookSlotDTO [doctorId=" + doctorId + ", slot=" + slot + ", userId=" + userId + "]";
 	}
-
+	
 }

@@ -9,27 +9,25 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Free_slot")
-public class Doctor_Free_slot_time_table {
+public class DoctorFreeslot {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int slotId;
+private boolean slotStatus;
 private int slot;
 @ManyToOne
 private Doctor doctor1;
-public Doctor_Free_slot_time_table(int slotId, int slot, Doctor doctor1) {
-	super();
-	this.slotId = slotId;
-	this.slot = slot;
-	this.doctor1 = doctor1;
-}
-public Doctor_Free_slot_time_table() {
-	super();
-}
 public int getSlotId() {
 	return slotId;
 }
 public void setSlotId(int slotId) {
 	this.slotId = slotId;
+}
+public boolean isSlotStatus() {
+	return slotStatus;
+}
+public void setSlotStatus(boolean slotStatus) {
+	this.slotStatus = slotStatus;
 }
 public int getSlot() {
 	return slot;
@@ -45,8 +43,20 @@ public void setDoctor1(Doctor doctor1) {
 }
 @Override
 public String toString() {
-	return "Doctor_Free_slot_time_table [slotId=" + slotId + ", slot=" + slot + ", doctor1=" + doctor1 + "]";
+	return "Doctor_Freeslot [slotId=" + slotId + ", slotStatus=" + slotStatus + ", slot=" + slot + ", doctor1="
+			+ doctor1 + "]";
 }
+public DoctorFreeslot(int slotId, boolean slotStatus, int slot, Doctor doctor1) {
+	super();
+	this.slotId = slotId;
+	this.slotStatus = slotStatus;
+	this.slot = slot;
+	this.doctor1 = doctor1;
+}
+public DoctorFreeslot() {
+	super();
+}
+
 
 	
 }

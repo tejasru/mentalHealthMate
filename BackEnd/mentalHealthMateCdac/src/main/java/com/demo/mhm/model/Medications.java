@@ -13,13 +13,13 @@ import javax.persistence.Table;
 public class Medications {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-private int medication_id;
+private int medicationId;
 private String medicationName;
 @ManyToOne
 private Diagnosis diagnosis;
 public Medications(int medication_id, String medicationName, Diagnosis diagnosis) {
 	super();
-	this.medication_id = medication_id;
+	this.medicationId = medication_id;
 	this.medicationName = medicationName;
 	this.diagnosis = diagnosis;
 }
@@ -27,10 +27,10 @@ public Medications() {
 	super();
 }
 public int getMedication_id() {
-	return medication_id;
+	return medicationId;
 }
 public void setMedication_id(int medication_id) {
-	this.medication_id = medication_id;
+	this.medicationId = medication_id;
 }
 public String getMedicationName() {
 	return medicationName;
@@ -46,7 +46,7 @@ public void setDiagnosis(Diagnosis diagnosis) {
 }
 @Override
 public String toString() {
-	return "Medications [medication_id=" + medication_id + ", medicationName=" + medicationName + ", diagnosis="
+	return "Medications [medication_id=" + medicationId + ", medicationName=" + medicationName + ", diagnosis="
 			+ diagnosis + "]";
 }
 

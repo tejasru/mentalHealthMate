@@ -50,10 +50,10 @@ public class DoctorServiceImpl implements DoctorServiceI{
 	@Override
 	public Doctor findUserByUserNameAndPassword(DoctorCredentialDTO dc) {
 
-	Doctor d=dd.FindByDuserName(dc.getUsername());
+			Doctor d=dd.FindByDuserName(dc.getUsername());
+			System.out.println(d);
 			String rawPassword = dc.getPassword();
-			if(d != null &&( (rawPassword.equals(d.getPassword()))&&(dc.getUsername().equals(d.getDuserName())))){
-				
+			if(rawPassword.equals(d.getPassword())){
 				return d;
 			}
 			return null;

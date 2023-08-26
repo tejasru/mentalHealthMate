@@ -14,15 +14,15 @@ import javax.persistence.Table;
 public class Diagnosis {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-private int diagnosis_id;
-private String diagnosis_name;
+private int diagnosisId;
+private String diagnosisName;
 private Date date;
 @ManyToOne
 private MedicalHistory med;
 public Diagnosis(int diagnosis_id, String diagnosis_name, Date date, MedicalHistory med) {
 	super();
-	this.diagnosis_id = diagnosis_id;
-	this.diagnosis_name = diagnosis_name;
+	this.diagnosisId = diagnosis_id;
+	this.diagnosisName = diagnosis_name;
 	this.date = date;
 	this.med = med;
 }
@@ -30,16 +30,16 @@ public Diagnosis() {
 	super();
 }
 public int getDiagnosis_id() {
-	return diagnosis_id;
+	return diagnosisId;
 }
 public void setDiagnosis_id(int diagnosis_id) {
-	this.diagnosis_id = diagnosis_id;
+	this.diagnosisId = diagnosis_id;
 }
 public String getDiagnosis_name() {
-	return diagnosis_name;
+	return diagnosisName;
 }
 public void setDiagnosis_name(String diagnosis_name) {
-	this.diagnosis_name = diagnosis_name;
+	this.diagnosisName = diagnosis_name;
 }
 public Date getDate() {
 	return date;
@@ -55,7 +55,7 @@ public void setMed(MedicalHistory med) {
 }
 @Override
 public String toString() {
-	return "Diagnosis [diagnosis_id=" + diagnosis_id + ", diagnosis_name=" + diagnosis_name + ", date=" + date
+	return "Diagnosis [diagnosis_id=" + diagnosisId + ", diagnosis_name=" + diagnosisName + ", date=" + date
 			+ ", med=" + med + "]";
 }
 

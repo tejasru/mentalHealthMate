@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.demo.mhm.service.Doc_AppointmentServiceI;
+import com.demo.mhm.service.DocAppointmentServiceI;
 
 @RequestMapping("/DocAppointment")
 @RestController
@@ -16,12 +16,17 @@ import com.demo.mhm.service.Doc_AppointmentServiceI;
 public class DoctorAppointmentController {
 	
 	@Autowired
-	private Doc_AppointmentServiceI Doc_AppointServiceImpl;
+	private DocAppointmentServiceI Doc_AppointServiceImpl;
 	
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<?> getTablesByWaiterId(@PathVariable("id") int docAppointment_id)
+	public ResponseEntity<?> getAppointment(@PathVariable("id") int docAppointment_id)
 	{
 		return ResponseEntity.ok(Doc_AppointServiceImpl.findAllappointment(docAppointment_id));
+	}
+	@GetMapping("/patient/{name}")
+	public ResponseEntity<?> getPatient(@PathVariable("name") String name){
+		//System.out.println(name);
+		return ResponseEntity.ok(Doc_AppointServiceImpl.findByname(name));
 	}
 }

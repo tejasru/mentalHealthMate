@@ -13,19 +13,17 @@ import com.demo.mhm.service.DocPaymentServiceI;
 @RequestMapping("/DocPayment")
 @RestController
 @CrossOrigin("*")
-
 public class DoctorPaymentController {
 	
 
 @Autowired
-private DocPaymentServiceI Doc_PayserviceImpl;
+private DocPaymentServiceI DocPayserviceImpl;
 
 
 @GetMapping("/{id}")
-public ResponseEntity<?> getTablesByWaiterId(@PathVariable("id") int paymentId)
+public ResponseEntity<?> getTablesByDoctorId(@PathVariable("id") int doctorId)
 {
-	return ResponseEntity.ok(Doc_PayserviceImpl.findAllappointment(paymentId));
+	//System.out.println(DocPayserviceImpl.findAllappointment(paymentId));
+	return ResponseEntity.ok(DocPayserviceImpl.findAllappointment(doctorId));
 }
-
-
 }

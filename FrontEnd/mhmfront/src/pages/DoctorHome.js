@@ -1,66 +1,98 @@
 import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import {useNavigate} from 'react-router';
-import {toast} from 'react-toastify';
 import './styles/Home.css';
-import {AiOutlineUser} from 'react-icons/ai';
+import {LiaMedkitSolid} from 'react-icons/lia';
+import NavBar from '../components/NavBar';
 
+let navigate;
+const paymentHandler=()=>{
+  navigate("/payments");
+}
+const schedule=()=>{
+  navigate("/freeSlot")
+}
+const patientHandler=()=>{
+  navigate("/appointments")
+}
 const DoctorHome=()=>{
+  navigate = useNavigate()
+  
+  const name = sessionStorage['dname'];
+  console.log(name);
     return (
     <>
+    <NavBar />
       <div class="wrapper">
-        <div class="container main">
+      <center>
+        <h1>Welcome <LiaMedkitSolid/>Dr. {name}</h1></center>
+        <div class="container maind">
         <div class="row">
-          <div class="col">
+          <div class="col-md-6 homeimagesschedule">
+          </div>
+          <div class="col col-md-6">
           <Card>
       <Card.Body>
-        <Card.Title>Free Slots</Card.Title>
+        <Card.Title>
+        <div class="card-heading">
+          <h5>Schedule</h5>
+          </div>
+        </Card.Title>
         <Card.Text>
           Click here to check your free slots here. You can edit your slots as well.
         </Card.Text>
-      </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
-      <Card.Body>
-        <Card.Link href="#">Visit</Card.Link>
+        <div class="card-title">
+        <a onClick={schedule} href="#">Visit</a>
+        </div>
       </Card.Body>
     </Card>
           </div>
-          <div class="col">
+        </div>
+        <div class="row">
+        <div class="col-md-6 homeimages">
+          </div>
+          <div class="col col-md-6">
           <Card>
       <Card.Body>
-        <Card.Title>Payments</Card.Title>
+        <Card.Title>
+          <div class="card-heading">
+          <h5>Payments</h5>
+          </div>
+          </Card.Title>
         <Card.Text>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
+        <div class="card-title">
+        <a onClick={paymentHandler} href="">Visit</a>
+        </div>
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
     </Card>
           </div>
-        <div class="col">
-        <Card>
+        </div>
+        <div class="row">
+          <div class="col-md-6 homeimagespatient">
+          </div>
+          <div class="col col-md-6">
+          <Card>
       <Card.Body>
-        <Card.Title>Check Appointments</Card.Title>
+        {/* <Card.Img className="images"></Card.Img> */}
+        <Card.Title>
+        <div class="card-heading">
+          <h5>Patients</h5>
+          </div>
+        </Card.Title>
         <Card.Text>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
         </Card.Text>
+        <div class="card-title">
+        <a onClick={patientHandler} href=''>Visit</a>
+        </div>
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-      </ListGroup>
     </Card>
-
-</div>
+          </div>
         </div>
         </div>
       </div>  

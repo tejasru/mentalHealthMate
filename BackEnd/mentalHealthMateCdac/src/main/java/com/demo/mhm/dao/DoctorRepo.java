@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 import com.demo.mhm.model.Doctor;
 @Repository
 public interface DoctorRepo extends JpaRepository<Doctor, Integer>{
-	@Query( value="select * from Doctor_Table where duser_name=:username",nativeQuery= true)
+	@Query( value="select * from Doctor_Table where doctor_name=:username",nativeQuery= true)
 Doctor FindByDuserName(String username);
 }

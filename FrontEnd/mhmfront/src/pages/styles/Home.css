@@ -6,31 +6,85 @@
 }
 .wrapper{
     background: #ececec;
-    padding: 0 20px 0 20px;
+    padding: 0 5px 0 5px;
 }
-.main{
+.input-box{
+    width: 330px;
+    box-sizing: border-box;
+  }
+.maind{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-right: 0%;
+    padding: 0%;
+    flex-shrink: inherit;
 }
-.images{
-    background-image: url("../../images/doctor.jpeg");
+.homeimages{
+    align-self: center;
+    height: 50%;
+    width: 100%;
+    padding: 5px;
+    background-image: url("../../images/money.jpeg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 10px 0 0 10px;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+    color: #ececec;
+}
+.homeimagesschedule{
+    align-self: center;
+    height: 50%;
+    width: 100%;
+    padding: 5px;
+    background-image: url("../../images/schedule.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 10px 10px 10px;
     position: relative;
 }
+.homeimagespatient{
+    align-self: center;
+    height: 50%;
+    width: 100%;
+    padding: 5px;
+    background-image: url("../../images/schedule.jpeg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+}
+.book{
+    border: none;
+    outline: none;
+    height: 45px;
+    background: #ececec;
+    border-radius: 5px;
+    transition: .4s;
+ }
+ .book:hover{
+    background: rgba(37, 95, 156, 0.937);
+    color: #fff;
+ }
 .row{
   width:  50rem;
-  height:500px;
+  height: 570px;
   border-radius: 15px;
   background: #fff;
-  padding: 10px;
-  margin: 10px;
+  padding: 5px;
+  margin: 5px;
   box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+}
+.rowd{
+  height: auto;
+  border-radius: 15px;
+  background: #fff;
+  padding: 5px;
+  margin: 5px;
+  box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2); 
 }
 .text{
     position: absolute;
@@ -38,11 +92,32 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
+.card-heading h5{
+    text-decoration: underline;
+    color: #313866;
+    transition: .3s;
+}
+.card-heading h5:hover{
+    text-decoration: none;
+    font-size: large;
+    color: #4477CE;
+}
+.payment-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
 .card-title a{
     text-decoration: none;
     font-weight: 700;
-    color: #000;
+    color: #4957db;
+    transition: .5s;
+}
+.card-title a:hover{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: x-large;
+    color: #b753cd;
     transition: .5s;
 }
 .col{
@@ -51,18 +126,29 @@
 }
 
 
+
 @media only screen and (max-width: 768px){
-    images{
+    homeimages{
         width: 16rem;
         position: absolute;
         top: 20px;
         left: 47%;
     }
+    .row{
+        width: auto;
+        height: auto;
+    }
     .text p, i{
         font-size: 16px;
     }
-    .row{
-        max-width:18rem;
-        width: 100%;
+    .maind{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        padding: 0%;
+        margin: 0%;
+    }
+    .col{
+        display: block;
     }
 }

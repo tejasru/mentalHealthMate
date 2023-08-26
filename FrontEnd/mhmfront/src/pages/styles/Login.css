@@ -22,9 +22,16 @@
     border-radius: 10px 0 0 10px;
     position: relative;
 }
+.dside-image{
+    background-image: url("../../images/doctor.jpeg");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+    position: relative;
+}
 .row{
   width:  900px;
-  height:550px;
+  height:570px;
   border-radius: 10px;
   background: #fff;
   padding: 0px;
@@ -131,6 +138,9 @@ span a:hover{
 
 @media only screen and (max-width: 768px){
     .side-image{
+        border-radius: 10px 10px 0 0;
+    }
+    .dside-image{
         border-radius: 10px 10px 0 0;
     }
     img{
